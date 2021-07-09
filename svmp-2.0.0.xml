@@ -18,10 +18,10 @@ limitations under the License.
           fetch="https://android.googlesource.com/" />
 
   <remote name="github"
-          fetch="https://github.com/" />
+          fetch=".." />
 
-  <remote name="svmp"
-          fetch="https://github.com/SVMP/" />
+  <remote  name="kernel"
+           fetch="https://git.kernel.org/pub/scm/linux/kernel/git/stable/" />
 
   <default revision="refs/tags/android-4.4.4_r2"
            remote="aosp"
@@ -468,26 +468,28 @@ limitations under the License.
 
   <!-- SVMP -->
 
-  <project path="device/mitre/svmp" remote="svmp" revision="svmp-2.0.0" name="android_device_mitre_svmp" >
+  <project path="device/mitre/svmp" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/android_device_mitre_svmp" >
     <copyfile src="build-svmp.sh" dest="build-svmp.sh" />
   </project>
-  <project path="external/svmp/svmpd" remote="svmp" revision="svmp-2.0.0" name="android_external_svmp_eventserver" />
-  <project path="external/svmp/svmp-protocol-def" remote="svmp" revision="svmp-2.0.0" name="svmp-protocol-def" />
+  <project path="external/svmp/svmpd" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/android_external_svmp_eventserver" />
+  <project path="external/svmp/svmp-protocol-def" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/svmp-protocol-def" />
 
   <!-- SVMP: mainline android projects we patched -->
-  <project path="bootable/diskinstaller" remote="svmp" revision="svmp-2.0.0" name="android_bootable_diskinstaller" />
-  <project path="external/grub" remote="svmp" revision="svmp-2.0.0" name="android_external_grub" />
-  <project path="frameworks/base" remote="svmp" revision="svmp-2.0.0" name="android_frameworks_base" />
-  <project path="frameworks/native" remote="svmp" revision="svmp-2.0.0" name="android_frameworks_native" groups="pdk" />
-  <project path="hardware/libhardware_legacy" remote="svmp" revision="svmp-2.0.0" name="android_hardware_libhardware_legacy" groups="pdk" />
-  <project path="system/core" remote="svmp" revision="svmp-2.0.0" name="android_system_core" groups="pdk" />
+  <project path="bootable/diskinstaller" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/android_bootable_diskinstaller" />
+  <project path="external/grub" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/android_external_grub" />
+  <project path="frameworks/base" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/android_frameworks_base" />
+  <project path="frameworks/native" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/android_frameworks_native" groups="pdk" />
+  <project path="hardware/libhardware_legacy" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/android_hardware_libhardware_legacy" groups="pdk" />
+  <project path="system/core" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/android_system_core" groups="pdk" />
 
   <!-- SVMP Extra external dependancies -->
-  <project path="kernel/android" remote="svmp" revision="svmp-2.0.0" name="android-kernel" />
+  <project path="kernel/android" remote="svmp" revision="refs/tags/svmp-2.0.0" name="SVMP/android-kernel" />
 
   <!-- mesa graphics experiment, disabled for now -->
-  <project path="external/mesa3d" remote="github" revision="svmp-2.0.0" name="SVMP/android_external_mesa3d" />
-  <project path="external/llvm" remote="github" revision="svmp-2.0.0" name="SVMP/android_external_llvm" groups="pdk" />
+  <project path="external/mesa3d" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/android_external_mesa3d" />
+  <project path="external/llvm" remote="github" revision="refs/tags/svmp-2.0.0" name="SVMP/android_external_llvm" groups="pdk" />
   <project path="hardware/intel/hwcomposer" remote="github" revision="release/android-4.2.2_r1-ia3" name="android-ia/hardware_intel_hwcomposer" />
+  <project path="hardware/intel/IA-Hardware-Composer" remote="github" revision="release/android-4.2.2_r1-ia3" name="intel/IA-Hardware-Composer" />
+
 
 </manifest>
